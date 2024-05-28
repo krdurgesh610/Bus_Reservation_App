@@ -1,0 +1,15 @@
+package org.jsp.reservationapp.model;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Entity
+@Data
+public class Admin {
+	private int id;
+	private String name;
+	private long phone;
+	private String gst_number;
+	private String email;
+	private String password;
+}

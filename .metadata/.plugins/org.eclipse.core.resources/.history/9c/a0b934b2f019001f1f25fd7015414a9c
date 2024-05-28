@@ -1,0 +1,15 @@
+package org.jsp.reservationapp.dao;
+
+import org.jsp.reservationapp.model.Bus;
+import org.jsp.reservationapp.repository.BusRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BusDao {
+	private BusRepository repository;
+
+	public Bus saveBus(Bus bus) {
+		return repository.save(bus);
+	}
+
+}

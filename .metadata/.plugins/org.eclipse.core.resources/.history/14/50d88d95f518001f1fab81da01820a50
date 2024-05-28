@@ -1,0 +1,9 @@
+package org.jsp.reservationapp.dao;
+
+import org.jsp.reservationapp.repository.UserRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserDao {
+	private UserRepository repository;
+}

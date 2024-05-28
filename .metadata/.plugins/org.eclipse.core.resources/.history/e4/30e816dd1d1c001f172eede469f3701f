@@ -1,0 +1,108 @@
+package org.jsp.reservationapp.service;
+
+import java.util.Optional;
+
+import org.jsp.reservationapp.dao.UserDao;
+import org.jsp.reservationapp.dto.ResponseStructure;
+import org.jsp.reservationapp.dto.UserRequest;
+import org.jsp.reservationapp.dto.UserResponse;
+import org.jsp.reservationapp.exception.UserNotFoundException;
+import org.jsp.reservationapp.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao dao;
+
+	public ResponseEntity<ResponseStructure<UserResponse>> saveUser(UserRequest userRequest) {
+		ResponseStructure<UserResponse> structure = new ResponseStructure<>();
+		structure.setMessage("User Saved");
+		structure.setData(mapToUserResponse(dao.saveUser(mapToUser(userRequest))));
+		structure.setStatusCode(HttpStatus.ACCEPTED.value());
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(structure);
+	}
+
+	public ResponseEntity<ResponseStructure<UserResponse>> updateUser(UserRequest userRequest, int id) {
+		ResponseStructure<UserResponse> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.findById(id);
+
+		if (rec.isPresent()) {
+			User db = mapToUser(userRequest);
+			db.setId(id);
+			structure.setMessage("User Updated");
+			structure.setData(mapToUserResponse(db));
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new UserNotFoundException("Can't Update User as Id is INvalid");
+	}
+
+	public ResponseEntity<ResponseStructure<UserResponse>> findById(int id) {
+		ResponseStructure<UserResponse> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.findById(id);
+
+		if (rec.isPresent()) {
+			structure.setMessage("User Found");
+			structure.setData(mapToUserResponse(rec.get()));
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new UserNotFoundException("Invalid User Id");
+	}
+
+	public ResponseEntity<ResponseStructure<UserResponse>> verifyUser(long phone, String password) {
+		ResponseStructure<UserResponse> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.verifyUser(phone, password);
+
+		if (rec.isPresent()) {
+			structure.setData(mapToUserResponse(rec.get()));
+			structure.setMessage("User Verified");
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new UserNotFoundException("Can't Verified User as Phone Number and Password Invalid");
+	}
+
+	public ResponseEntity<ResponseStructure<UserResponse>> verifyUser(String email, String password) {
+		ResponseStructure<UserResponse> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.verifyUser(email, password);
+
+		if (rec.isPresent()) {
+			structure.setData(mapToUserResponse(rec.get()));
+			structure.setMessage("User Verified");
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new UserNotFoundException("Can't Verified User as Email Id and Password Invalid");
+	}
+
+	public ResponseEntity<ResponseStructure<User>> deleteUser(int id) {
+		ResponseStructure<User> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.findById(id);
+
+		if (rec.isPresent()) {
+			dao.deleteUser(id);
+			structure.setMessage("User Deleted");
+			structure.setData(rec.get());
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new UserNotFoundException("Can't Delete User as Id is Invalid");
+	}
+
+	private User mapToUser(UserRequest userRequest) {
+		return User.builder().name(userRequest.getName()).phone(userRequest.getPhone()).email(userRequest.getEmail())
+				.age(userRequest.getAge()).gender(userRequest.getGender()).password(userRequest.getPassword()).build();
+	}
+
+	private UserResponse mapToUserResponse(User user) {
+		return UserResponse.builder().id(user.getId()).name(user.getName()).phone(user.getPhone())
+				.email(user.getEmail()).age(user.getAge()).gender(user.getGender()).password(user.getPassword())
+				.build();
+	}
+
+}

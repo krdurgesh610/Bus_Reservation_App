@@ -1,0 +1,22 @@
+package org.jsp.reservationapp.dto;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+
+public class BusResponse {
+	private int id;
+	@Column(nullable = false)
+	private String name;
+	@Column(nullable = false, unique = true)
+	private String bus_number;
+	@Column(nullable = false)
+	private String from_location;
+	@Column(nullable = false)
+	private String to_location;
+	@Column(nullable = false)
+	private int number_of_seat;
+	@Column(nullable = false)
+	private LocalDate date_of_departure;
+
+}

@@ -1,0 +1,40 @@
+package org.jsp.reservationapp.controller;
+
+import java.util.List;
+
+import org.jsp.reservationapp.dto.BusRequest;
+import org.jsp.reservationapp.dto.ResponseStructure;
+import org.jsp.reservationapp.model.Bus;
+import org.jsp.reservationapp.service.BusService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/bus")
+public class BusController {
+	@Autowired
+	private BusService service;
+
+	@PostMapping
+	public ResponseEntity<ResponseStructure<Bus>> saveBus(@RequestBody BusRequest busRequest) {
+		return service.saveBus(busRequest);
+	}
+
+	@PutMapping("/{id}")
+	public ResponseEntity<ResponseStructure<Bus>> updateBus(@RequestBody BusRequest busRequest, int id) {
+		return service.updateBus(busRequest, id);
+	}
+
+	@GetMapping
+	public ResponseEntity<ResponseStructure<List<Bus>>> findByBusName(@PathVariable String name) {
+		return service.findByBusName(name);
+	}
+
+}

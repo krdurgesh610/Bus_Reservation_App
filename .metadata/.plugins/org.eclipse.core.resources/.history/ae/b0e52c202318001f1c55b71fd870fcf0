@@ -1,0 +1,30 @@
+package org.jsp.reservationapp.service;
+
+import java.util.Optional;
+
+import org.jsp.reservationapp.dao.AdminDao;
+import org.jsp.reservationapp.dto.ResponseStructure;
+import org.jsp.reservationapp.model.Admin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdminService {
+	@Autowired
+	private AdminDao adminDao;
+
+	public ResponseEntity<ResponseStructure<Admin>> saveAdmin(Admin admin) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		structure.setMessage("Admin Saved");
+		structure.setData(adminDao.saveAdmin(admin));
+		structure.setStatusCode(HttpStatus.CREATED.value());
+		return ResponseEntity.status(HttpStatus.CREATED).body(structure);
+	}
+
+	public ResponseEntity<ResponseStructure<Admin>> updateAdmin(Admin admin) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		Optional<Admin> rec = adminDao.findById(admin.getId());
+	}
+}

@@ -1,0 +1,5 @@
+package org.jsp.reservationapp.exception;
+
+public class BusNotFoundException {
+
+}

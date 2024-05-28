@@ -1,0 +1,9 @@
+package org.jsp.reservationapp.service;
+
+import org.jsp.reservationapp.dao.AdminDao;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdminService {
+	private AdminDao adminDao;
+}

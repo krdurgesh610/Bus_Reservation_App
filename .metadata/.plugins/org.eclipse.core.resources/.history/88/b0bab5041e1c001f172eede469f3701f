@@ -1,0 +1,5 @@
+package org.jsp.reservationapp.dto;
+
+public class BusResponse {
+
+}

@@ -1,0 +1,58 @@
+package org.jsp.reservationapp.service;
+
+import java.util.Optional;
+
+import org.jsp.reservationapp.dao.UserDao;
+import org.jsp.reservationapp.dto.ResponseStructure;
+import org.jsp.reservationapp.exception.UserNotFoundException;
+import org.jsp.reservationapp.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao dao;
+
+	public ResponseEntity<ResponseStructure<User>> saveUser(User user) {
+		ResponseStructure<User> structure = new ResponseStructure<>();
+		structure.setData(dao.saveUser(user));
+		structure.setMessage("User Saved");
+		structure.setStatusCode(HttpStatus.ACCEPTED.value());
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(structure);
+	}
+
+	public ResponseEntity<ResponseStructure<User>> updateUser(User user) {
+		ResponseStructure<User> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.findById(user.getId());
+
+		if (rec.isPresent()) {
+			User db = dao.saveUser(rec.get());
+			db.setAge(user.getAge());
+			db.setEmail(user.getEmail());
+			db.setGender(user.getGender());
+			db.setName(user.getName());
+			db.setPhone(user.getPhone());
+			db.setPassword(user.getPassword());
+			structure.setMessage("User Updated");
+			structure.setData(db);
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new UserNotFoundException("Can't Update User as Id is INvalid");
+	}
+
+	public ResponseEntity<ResponseStructure<User>> findById(int id) {
+		ResponseStructure<User> structure = new ResponseStructure<>();
+		Optional<User> rec = dao.findById(id);
+
+		if (rec.isPresent()) {
+			structure.setMessage("User Found");
+			structure.setData(rec.get());
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+	}
+}

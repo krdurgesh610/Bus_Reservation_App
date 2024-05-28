@@ -1,0 +1,23 @@
+package org.jsp.reservationapp.service;
+
+import org.jsp.reservationapp.dao.UserDao;
+import org.jsp.reservationapp.dto.ResponseStructure;
+import org.jsp.reservationapp.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao dao;
+
+	public ResponseEntity<ResponseStructure<User>> saveUser(User user) {
+		ResponseStructure<User> structure = new ResponseStructure<>();
+		structure.setData(dao.saveUser(user));
+		structure.setMessage("User Saved");
+		structure.setStatusCode(HttpStatus.ACCEPTED.value());
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(structure);
+	}
+}

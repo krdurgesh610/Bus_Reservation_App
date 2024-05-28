@@ -1,0 +1,95 @@
+package org.jsp.reservationapp.service;
+
+import java.util.Optional;
+
+import org.jsp.reservationapp.dao.AdminDao;
+import org.jsp.reservationapp.dto.ResponseStructure;
+import org.jsp.reservationapp.exception.AdminNotFoundException;
+import org.jsp.reservationapp.model.Admin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdminService {
+	@Autowired
+	private AdminDao adminDao;
+
+	public ResponseEntity<ResponseStructure<Admin>> saveAdmin(Admin admin) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		structure.setMessage("Admin Saved");
+		structure.setData(adminDao.saveAdmin(admin));
+		structure.setStatusCode(HttpStatus.CREATED.value());
+		return ResponseEntity.status(HttpStatus.CREATED).body(structure);
+	}
+
+	public ResponseEntity<ResponseStructure<Admin>> updateAdmin(Admin admin) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		Optional<Admin> rec = adminDao.findById(admin.getId());
+
+		if (rec.isPresent()) {
+			Admin db = adminDao.saveAdmin(rec.get());
+			db.setName(admin.getName());
+			db.setGst_number(admin.getGst_number());
+			db.setEmail(admin.getEmail());
+			db.setPhone(admin.getPhone());
+			db.setTravels_name(admin.getTravels_name());
+			structure.setMessage("Admin Updated");
+			structure.setData(db);
+			structure.setStatusCode(HttpStatus.ACCEPTED.value());
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(structure);
+		}
+		throw new AdminNotFoundException("Can't Update Admin as Id is Invalid");
+	}
+
+	public ResponseEntity<ResponseStructure<Admin>> findById(int id) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		Optional<Admin> db = adminDao.findById(id);
+
+		if (db.isPresent()) {
+			structure.setData(db.get());
+			structure.setMessage("Admin Found");
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new AdminNotFoundException("Invalid Admin Id");
+	}
+
+	public ResponseEntity<ResponseStructure<Admin>> verifyAdmin(long phone, String password) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		Optional<Admin> db = adminDao.verifyAdmin(phone, password);
+
+		if (db.isPresent()) {
+			structure.setData(db.get());
+			structure.setMessage("Verification Succesfull");
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new AdminNotFoundException("Invalid Phone Number and Password");
+	}
+
+	public ResponseEntity<ResponseStructure<Admin>> verifyAdmin(String email, String password) {
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		Optional<Admin> db = adminDao.verifyAdmin(email, password);
+
+		if (db.isPresent()) {
+			structure.setData(db.get());
+			structure.setMessage("Verification Succesfull");
+			structure.setStatusCode(HttpStatus.OK.value());
+			return ResponseEntity.status(HttpStatus.OK).body(structure);
+		}
+		throw new AdminNotFoundException("Invalid Email Id and Password");
+	}
+	
+	public ResponseEntity<ResponseStructure<Admin>> deleteAdmin(int id){
+		ResponseStructure<Admin> structure = new ResponseStructure<>();
+		Optional<Admin> db = adminDao.findById(id);
+		
+		if(db.isPresent()) {
+			adminDao.deleteAdmin(id);
+			structure.setMessage("Admin Deleted");
+			structure.setData("Admin Found");
+		}
+	}
+}

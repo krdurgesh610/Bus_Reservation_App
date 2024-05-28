@@ -1,0 +1,8 @@
+package org.jsp.reservationapp.repository;
+
+import org.jsp.reservationapp.model.Bus;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BusRepository extends JpaRepository<Bus, Integer> {
+
+}

@@ -1,0 +1,9 @@
+package org.jsp.reservationapp.service;
+
+import org.jsp.reservationapp.dao.UserDao;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	private UserDao dao;
+}
