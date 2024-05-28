@@ -1,0 +1,26 @@
+.userLogin form{
+    width: 600px;
+    display: grid;
+    grid-template-columns: 200px 300px;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 20px;
+}
+
+.userLogin input{
+    margin: 10px;
+}
+
+.userLogin{
+    background-image: url(https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+}

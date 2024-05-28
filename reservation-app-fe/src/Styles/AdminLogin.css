@@ -1,0 +1,26 @@
+.adminLogin form{
+    width: 600px;
+    display: grid;
+    grid-template-columns: 200px 300px;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 20px;
+}
+
+.adminLogin input{
+    margin: 10px;
+}
+
+.adminLogin{
+    background-image: url(https://t4.ftcdn.net/jpg/05/71/83/47/360_F_571834789_ujYbUnH190iUokdDhZq7GXeTBRgqYVwa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+}
