@@ -1,5 +1,0 @@
-package org.jsp.reservationapp.repository;
-
-public interface AdminRepository {
-
-}

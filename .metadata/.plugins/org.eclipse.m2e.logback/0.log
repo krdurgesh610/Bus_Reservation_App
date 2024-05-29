@@ -1505,3 +1505,106 @@
 2024-05-28 18:12:23,399 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-05-28 18:12:23,409 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-05-28 18:12:23,415 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Reservation_App\src\test\resources
+2024-05-29 01:06:07,008 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@4bc740d9{STOPPING}[12.0.6,sto=0]
+2024-05-29 01:06:07,032 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@3757d226{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2024-05-29 16:19:59,867 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-05-29 17:16:05,824 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.jsp:Mail_Sending_Api:0.0.1-SNAPSHOT @ C:\Users\HP\Desktop\Project\Mail_Sending_Api\pom.xml.
+2024-05-29 17:16:09,068 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/3.3.0/spring-boot-starter-mail-3.3.0.pom
+2024-05-29 17:16:09,150 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/3.3.0/spring-boot-starter-mail-3.3.0.pom
+2024-05-29 17:16:09,928 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/6.1.8/spring-context-support-6.1.8.pom
+2024-05-29 17:16:09,975 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/6.1.8/spring-context-support-6.1.8.pom
+2024-05-29 17:16:10,163 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/jakarta.mail/2.0.3/jakarta.mail-2.0.3.pom
+2024-05-29 17:16:10,263 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/angus/jakarta.mail/2.0.3/jakarta.mail-2.0.3.pom
+2024-05-29 17:16:10,458 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/all/2.0.3/all-2.0.3.pom
+2024-05-29 17:16:10,785 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/angus/all/2.0.3/all-2.0.3.pom
+2024-05-29 17:16:11,409 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/3.3.0/spring-boot-starter-mail-3.3.0.jar
+2024-05-29 17:16:12,084 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/3.3.0/spring-boot-starter-mail-3.3.0.jar
+2024-05-29 17:16:12,228 [BasicRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/jakarta.mail/2.0.3/jakarta.mail-2.0.3.jar
+2024-05-29 17:16:12,872 [BasicRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/6.1.8/spring-context-support-6.1.8.jar
+2024-05-29 17:16:13,647 [BasicRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/6.1.8/spring-context-support-6.1.8.jar
+2024-05-29 17:16:15,485 [BasicRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/angus/jakarta.mail/2.0.3/jakarta.mail-2.0.3.jar
+2024-05-29 17:16:17,748 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/main/java
+2024-05-29 17:16:17,751 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:16:17,761 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:16:17,771 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/test/java
+2024-05-29 17:16:17,772 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/test/resources
+2024-05-29 17:16:18,308 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 16 sec
+2024-05-29 17:16:18,314 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-05-29 17:16:19,584 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.jsp:Mail_Sending_Api:0.0.1-SNAPSHOT @ C:\Users\HP\Desktop\Project\Mail_Sending_Api\pom.xml.
+2024-05-29 17:16:21,093 [Worker-16: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/3.3.0/spring-boot-starter-mail-3.3.0-sources.jar
+2024-05-29 17:16:21,157 [Worker-16: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-mail/3.3.0/spring-boot-starter-mail-3.3.0-sources.jar
+2024-05-29 17:16:21,164 [Worker-16: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-mail:3.3.0
+2024-05-29 17:16:21,711 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/main/java
+2024-05-29 17:16:21,713 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:16:21,714 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:16:21,715 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/test/java
+2024-05-29 17:16:21,716 [Worker-12: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/test/resources
+2024-05-29 17:16:22,404 [Worker-12: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 3.00 sec, update config takes 0.00 sec 
+2024-05-29 17:16:22,835 [Worker-16: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/6.1.8/spring-context-support-6.1.8-sources.jar
+2024-05-29 17:16:24,152 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:16:24,196 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:16:24,205 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:16:24,623 [Worker-16: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context-support/6.1.8/spring-context-support-6.1.8-sources.jar
+2024-05-29 17:16:24,630 [Worker-16: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-context-support:6.1.8
+2024-05-29 17:16:25,856 [Worker-16: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/jakarta.mail/2.0.3/jakarta.mail-2.0.3-sources.jar
+2024-05-29 17:16:30,045 [Worker-16: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/angus/jakarta.mail/2.0.3/jakarta.mail-2.0.3-sources.jar
+2024-05-29 17:16:30,058 [Worker-16: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.eclipse.angus:jakarta.mail:2.0.3
+2024-05-29 17:18:55,785 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:18:55,798 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:18:55,801 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:19:20,755 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:19:20,800 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:19:20,810 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:25:52,158 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:25:52,167 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:25:52,171 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:26:01,958 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:26:01,963 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:26:01,966 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:26:41,606 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:26:41,614 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:26:41,618 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:27:12,986 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:27:12,992 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:27:12,995 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:28:37,263 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:28:37,272 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:28:37,282 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:33:37,246 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:33:37,252 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:33:37,254 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:34:04,185 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-05-29 17:34:04,713 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.jsp:Mail_Sending_Api:0.0.1-SNAPSHOT @ C:\Users\HP\Desktop\Project\Mail_Sending_Api\pom.xml.
+2024-05-29 17:34:05,323 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/main/java
+2024-05-29 17:34:05,323 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:34:05,324 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:34:05,324 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/test/java
+2024-05-29 17:34:05,325 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/test/resources
+2024-05-29 17:34:05,684 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2024-05-29 17:34:06,107 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:34:06,133 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:34:06,140 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:35:11,636 [Worker-30: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.jsp:Mail_Sending_Api:0.0.1-SNAPSHOT @ C:\Users\HP\Desktop\Project\Mail_Sending_Api\pom.xml.
+2024-05-29 17:35:12,214 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:35:12,215 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:35:12,222 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:35:13,460 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:35:13,489 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:35:13,492 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:35:23,841 [Worker-22: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-05-29 17:35:24,266 [Worker-22: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.jsp:Mail_Sending_Api:0.0.1-SNAPSHOT @ C:\Users\HP\Desktop\Project\Mail_Sending_Api\pom.xml.
+2024-05-29 17:35:24,658 [Worker-22: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/main/java
+2024-05-29 17:35:24,658 [Worker-22: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:35:24,659 [Worker-22: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/main/resources
+2024-05-29 17:35:24,659 [Worker-22: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Mail_Sending_Api/src/test/java
+2024-05-29 17:35:24,660 [Worker-22: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Mail_Sending_Api/src/test/resources
+2024-05-29 17:35:24,912 [Worker-22: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 0.00 sec 
+2024-05-29 17:35:25,220 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:35:25,237 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:35:25,241 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:41:54,916 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:41:54,932 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:41:54,938 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources
+2024-05-29 17:46:03,870 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-29 17:46:03,881 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-29 17:46:03,883 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\HP\Desktop\Project\Mail_Sending_Api\src\test\resources

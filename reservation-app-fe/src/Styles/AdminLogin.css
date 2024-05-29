@@ -18,9 +18,13 @@
     background-size: cover;
     color: white;
     font-size: 20px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.adminLogin p{
+    font-size: 25px;
 }

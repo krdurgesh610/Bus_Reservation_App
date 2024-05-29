@@ -1,0 +1,59 @@
+.adminSignUp {
+    background: linear-gradient(to right, #ff8a00, #da1b60);
+    background-image: url(https://e1.pxfuel.com/desktop-wallpaper/755/195/desktop-wallpaper-cool-backgrounds-3d-soccer-for-editing-editing-full.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .adminSignUp form {
+    background-color: rgba(28, 247, 57, 0.735);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .adminSignUp label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: cursive;
+    font-size: 16px;
+  }
+  
+  .adminSignUp input {
+    width: calc(100% - 22px); /* Adjusted to accommodate padding and border */
+    padding: 10px;
+    margin-bottom: 10px; /* Reduced space between inputs */
+    border: 1px solid #f90404;
+    border-radius: 4px;
+  }
+  
+  .adminSignUp button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #da1b60;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
+    font-size: 16px;
+  }
+  
+  .adminSignUp button:hover {
+    background-color: #ff8a00;
+  }
+  
+  .adminSignUp p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .adminSignUp p a {
+    color: #da1b60;
+    font-family: cursive;
+    font-size: 16px;
+  }
