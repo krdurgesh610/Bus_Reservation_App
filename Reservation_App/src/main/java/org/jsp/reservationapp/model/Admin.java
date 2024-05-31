@@ -36,6 +36,11 @@ public class Admin {
 	private String travels_name;
 	@Column(nullable = false)
 	private String password;
+	
+	private String token;
+	
+	@Column(nullable = false)
+	private String status;
 
 	@OneToMany(mappedBy = "admin")
 	@JsonIgnore

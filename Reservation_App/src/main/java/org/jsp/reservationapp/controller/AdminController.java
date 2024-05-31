@@ -6,6 +6,7 @@ import org.jsp.reservationapp.dto.ResponseStructure;
 import org.jsp.reservationapp.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/admins")
 public class AdminController {
@@ -25,8 +28,8 @@ public class AdminController {
 	private AdminService service;
 
 	@PostMapping
-	public ResponseEntity<ResponseStructure<AdminResponse>> saveAdmin(@Valid @RequestBody AdminRequest adminRequest) {
-		return service.saveAdmin(adminRequest);
+	public ResponseEntity<ResponseStructure<AdminResponse>> saveAdmin(@Valid @RequestBody AdminRequest adminRequest,HttpServletRequest request) {
+		return service.saveAdmin(adminRequest, request);
 	}
 
 	@PutMapping("/{id}")
@@ -55,6 +58,11 @@ public class AdminController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ResponseStructure<String>> deleteAdmin(@PathVariable int id) {
 		return service.deleteAdmin(id);
+	}
+	
+	@GetMapping("/activate")
+	public String activate(@RequestParam String token) {
+		return service.activate(token);
 	}
 
 }

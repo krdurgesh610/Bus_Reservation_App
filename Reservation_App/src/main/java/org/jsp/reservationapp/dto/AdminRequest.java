@@ -21,7 +21,7 @@ public class AdminRequest {
 	private String email;
 	
 	@NotBlank(message = "GST Number is mandatory")
-	@Size(min = 7,max = 7,message = "GST Number must have 7 character")
+	@Size(min = 7,max = 15,message = "GST Number must have 7 character")
 	private String gst_number;
 	
 	@NotBlank(message = "Travels Name mandatory")

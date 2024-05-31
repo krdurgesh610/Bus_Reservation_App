@@ -27,6 +27,10 @@ public class AdminDao {
 	public Optional<Admin> verifyAdmin(String email, String password) {
 		return repository.findByEmailAndPassword(email, password);
 	}
+	
+	public Optional<Admin> findByToken(String token){
+		return repository.findByToken(token);
+	}
 
 	public void deleteAdmin(int id) {
 		repository.deleteById(id);
