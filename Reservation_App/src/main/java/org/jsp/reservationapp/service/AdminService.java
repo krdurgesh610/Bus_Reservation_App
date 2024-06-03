@@ -5,40 +5,69 @@ import java.util.Optional;
 import org.jsp.reservationapp.dao.AdminDao;
 import org.jsp.reservationapp.dto.AdminRequest;
 import org.jsp.reservationapp.dto.AdminResponse;
+import org.jsp.reservationapp.dto.EmailConfiguration;
 import org.jsp.reservationapp.dto.ResponseStructure;
 import org.jsp.reservationapp.exception.AdminNotFoundException;
 import org.jsp.reservationapp.model.Admin;
+import org.jsp.reservationapp.util.AccountStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpServletRequest;
-import net.bytebuddy.utility.RandomString;
 
 @Service
 public class AdminService {
 	@Autowired
 	private AdminDao adminDao;
-	
+
 	@Autowired
 	private ReservationApiMailService mailService;
 
-	public ResponseEntity<ResponseStructure<AdminResponse>> saveAdmin(AdminRequest adminRequest, HttpServletRequest request) {
-		String siteUrl = request.getRequestURL().toString();
-		String path = request.getServletPath();
-		String activation_link = siteUrl.replace(path, "/api/admins/activate");
+	@Autowired
+	private LinkGeneratorService linkGeneratorService;
+
+	@Autowired
+	private EmailConfiguration emailConfiguration;
+
+	public ResponseEntity<ResponseStructure<AdminResponse>> saveAdmin(AdminRequest adminRequest,
+			HttpServletRequest request) {
 		ResponseStructure<AdminResponse> structure = new ResponseStructure<>();
-		String token = RandomString.make(45);
-		activation_link += "?token="+token;
-		System.out.println(activation_link);
+
 		Admin admin = mapToAdmin(adminRequest);
-		admin.setToken(token);
-		admin.setStatus("IN_ACTIVE");
-		adminDao.saveAdmin(admin);
-		structure.setMessage(mailService.sendMail(admin.getEmail(), activation_link));
+
+//		admin.setStatus("IN_ACTIVE");
+		admin.setStatus(AccountStatus.IN_ACTIVE.toString());
+
+//		adminDao.saveAdmin(admin);
+		admin = adminDao.saveAdmin(admin);
+
+//		String activation_link = siteUrl.replace(path, "/api/admins/activate");
+		String activation_link = linkGeneratorService.getActivationLink(admin, request);
+
+		emailConfiguration.setSubject("Activate Your Account");
+		emailConfiguration
+				.setText("Dear Admin Please Activate Your Account by clicking on following Link :" + activation_link);
+		emailConfiguration.setToAddress(admin.getEmail());
+
+//		structure.setMessage(mailService.sendMail(admin.getEmail(), activation_link));
+		structure.setMessage(mailService.sendMail(emailConfiguration));
+
+//		structure.setData(mapToAdminResponse(admin));
 		structure.setData(mapToAdminResponse(admin));
+
+//		structure.setStatusCode(HttpStatus.CREATED.value());
 		structure.setStatusCode(HttpStatus.CREATED.value());
+
+//		String siteUrl = request.getRequestURL().toString();
+//		String path = request.getServletPath();
+//
+//		String token = RandomString.make(45);
+//		activation_link += "?token=" + token;
+//		System.out.println(activation_link);
+//		admin.setToken(token);
+
 		return ResponseEntity.status(HttpStatus.CREATED).body(structure);
 	}
 
