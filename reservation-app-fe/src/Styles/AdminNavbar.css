@@ -1,0 +1,15 @@
+.adminNavbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 70px;
+}
+
+.adminNavbar .logo h1{
+    color: crimson;
+}
+
+.adminNavbar .logo sup{
+    color: brown;
+}

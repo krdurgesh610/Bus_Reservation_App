@@ -1,30 +1,47 @@
-.adminLogin form{
-    width: 600px;
-    display: grid;
-    grid-template-columns: 200px 300px;
-    justify-content: center;
-    padding: 10px;
-    box-shadow: 0px 0px 20px white;
-    border-radius: 20px;
-}
-
-.adminLogin input{
-    margin: 10px;
-}
-
-.adminLogin{
-    background-image: url(https://t4.ftcdn.net/jpg/05/71/83/47/360_F_571834789_ujYbUnH190iUokdDhZq7GXeTBRgqYVwa.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    font-size: 20px;
-    display: grid;
+.adminLogin {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.adminLogin p{
-    font-size: 25px;
-}
+    background: linear-gradient(135deg, #e09, #d0e);
+  }
+  
+  .adminLogin form {
+    display: flex;
+    flex-direction: column;
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .adminLogin label {
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  
+  .adminLogin input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .adminLogin input::placeholder {
+    color: #6c757d;
+  }
+  
+  .adminLogin button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .adminLogin button:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    color: #f8f9fa;
+  }
+  
