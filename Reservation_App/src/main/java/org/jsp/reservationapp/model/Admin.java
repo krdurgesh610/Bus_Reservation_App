@@ -44,5 +44,5 @@ public class Admin {
 
 	@OneToMany(mappedBy = "admin")
 	@JsonIgnore
-	private List<Bus> bus;
+	private List<Bus> buses;
 }

@@ -32,4 +32,12 @@ public class UserDao {
 		repository.deleteById(id);
 	}
 
+	public Optional<User> finfByToken(String token) {
+		return repository.findByToken(token);
+	}
+
+	public Optional<User> findByEmail(String email) {
+		return repository.findByEmail(email);
+	}
+
 }

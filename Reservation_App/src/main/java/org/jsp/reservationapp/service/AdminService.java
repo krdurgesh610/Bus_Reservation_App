@@ -118,7 +118,12 @@ public class AdminService {
 		Optional<Admin> db = adminDao.verifyAdmin(phone, password);
 
 		if (db.isPresent()) {
-			structure.setData(mapToAdminResponse(db.get()));
+
+			Admin admin = db.get();
+			if (admin.getStatus().equals(AccountStatus.IN_ACTIVE.toString())) {
+				throw new IllegalStateException("Please Activate Your Account before You Sign In");
+			}
+			structure.setData(mapToAdminResponse(admin));
 			structure.setMessage("Verification Succesfull");
 			structure.setStatusCode(HttpStatus.OK.value());
 			return ResponseEntity.status(HttpStatus.OK).body(structure);
@@ -175,6 +180,31 @@ public class AdminService {
 		db.setStatus("ACTIVE");
 		db.setToken(null);
 		adminDao.saveAdmin(db);
-		return "Your Account has been activated";
+		return "Your Account has been Activated";
+	}
+
+	public String forgotPassword(String email, HttpServletRequest request) {
+		Optional<Admin> rec = adminDao.findByEmail(email);
+
+		if (rec.isEmpty())
+			throw new AdminNotFoundException("Invalid Email Id");
+		Admin admin = rec.get();
+		String resetPasswordLink = linkGeneratorService.getResetPasswordLink(admin, request);
+		emailConfiguration.setToAddress(email);
+		emailConfiguration.setText("Please click on the following link to reset your password :" + resetPasswordLink);
+		emailConfiguration.setSubject("RESET YOUR PASSWORD");
+		mailService.sendMail(emailConfiguration);
+		return "reset password link has been sent to entered email Id";
+	}
+
+	public AdminResponse verifyLink(String token) {
+		Optional<Admin> rec = adminDao.findByToken(token);
+
+		if (rec.isEmpty())
+			throw new AdminNotFoundException("Link has been expired or it is Invalid");
+		Admin dbAdmin = rec.get();
+		dbAdmin.setToken(null);
+		adminDao.saveAdmin(dbAdmin);
+		return mapToAdminResponse(dbAdmin);
 	}
 }
